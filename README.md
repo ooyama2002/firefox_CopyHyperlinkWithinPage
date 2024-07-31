@@ -1,2 +1,3 @@
-# firefox_CopyHyperlinkWithinPage
-firefox add on. copy a hyperlink within a page.
+# CopyHyperlinkWithinPage
+CopyHyperlinkWithinPage is a firefox addon.  
+Copies hyperlinks in the page to the clipboard.
