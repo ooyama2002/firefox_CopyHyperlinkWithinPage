@@ -17,13 +17,13 @@
 
     function messageBox(message) {
         let messageBox = document.createElement("div");
-        messageBox.id = "messageBox";
-        messageBox.style.cssText = " font-size: 12px; color: black; width: 100%; padding: 20px 0; background-color: #e8ffd1; text-align: center; position: fixed; top: 0px; left: 0px; ";
+        messageBox.id = "messageBoxCopyHyperlinkWithinPage";
+        messageBox.style.cssText = " font-size: 12px; color: black; width: 100%; padding: 20px 0; background-color: #e8ffd1; text-align: center; position: fixed; top: 0px; left: 0px; z-index: 999999; ";
         messageBox.textContent = message;
         document.body.appendChild(messageBox);
 
         setTimeout(function () {
-            let messageBox = document.querySelector("#messageBox");
+            let messageBox = document.querySelector("#messageBoxCopyHyperlinkWithinPage");
             document.body.removeChild(messageBox);
         }, 1000);
     }
