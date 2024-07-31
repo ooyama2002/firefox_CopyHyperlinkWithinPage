@@ -5,7 +5,10 @@
     "description": "Copy a hyperlink within a page",
     "homepage_url": "https://github.com/ooyama2002/firefox_CopyHyperlinkWithinPage/",
     "icons": {
-        "48": "icon-48.png"
+        "32": "icon-32.png",
+        "48": "icon-48.png",
+        "64": "icon-64.png",
+        "128": "icon-128.png"
     },
     "permissions": [
         "activeTab",
