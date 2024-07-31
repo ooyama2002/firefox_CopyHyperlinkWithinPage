@@ -6,6 +6,6 @@ browser.tabs
         }, 1000);
     })
     .catch(function (error) {
-        document.write(error.message);
+        document.querySelector("#message").textContent = error.message;
         // console.log(error.message);
     });
