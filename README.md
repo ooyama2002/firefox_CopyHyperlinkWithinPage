@@ -2,6 +2,9 @@
 `CopyHyperlinkWithinPage` はfirefox用のアドオンです。  
 アクティブなタブのページ内のハイパーリンクをクリップボードにコピーします。  
 
+## ダウンロードページ
+[CopyHyperlinkWithinPage – 🦊 Firefox (ja) 向け拡張機能を入手](https://addons.mozilla.org/ja/firefox/addon/copyhyperlinkwithinpage/)
+
 ## 使い方
 ![readme_image_01](https://github.com/user-attachments/assets/636d99e2-0315-4fc1-9414-5056af66c2c9)  
 ![readme_image_02](https://github.com/user-attachments/assets/668c4641-22d9-4ab8-980c-82efbd39aa4f)  
