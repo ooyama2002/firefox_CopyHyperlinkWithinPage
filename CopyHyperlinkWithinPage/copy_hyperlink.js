@@ -28,14 +28,14 @@
         }
 
         // console.log(buff);
-        // navigator.clipboard.writeText(buff);
+        navigator.clipboard.writeText(buff);
 
-        let textarea = document.createElement("textarea");
-        textarea.value = buff;
-        document.body.append(textarea);
-        textarea.select();
-        document.execCommand("copy");
-        textarea.remove();
+        // let textarea = document.createElement("textarea");
+        // textarea.value = buff;
+        // document.body.append(textarea);
+        // textarea.select();
+        // document.execCommand("copy");
+        // textarea.remove();
 
         messageBox("copied.");
     }
