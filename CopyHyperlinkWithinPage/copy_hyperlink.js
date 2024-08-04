@@ -1,17 +1,42 @@
 (() => {
-    function copy() {
+
+    if (window.CopyHyperlinkWithinPageIsRun) {
+        return;
+    }
+    window.CopyHyperlinkWithinPageIsRun = true;
+
+    function copy(param) {
         let elements = document.querySelectorAll("a");
         let buff = "";
         for (let i = 0; i < elements.length; i++) {
             if (elements[i].href !== undefined
                 && elements[i].href.startsWith("http")) {
-                buff += ((elements[i].textContent == "") ? "untitled" : elements[i].textContent) + "\r\n";
-                buff += elements[i].href + "\r\n";
-                buff += "\r\n";
+
+                let title = ((elements[i].textContent == "") ? "untitled" : elements[i].textContent);
+                let url = elements[i].href;
+
+                if (param == "normal") {
+                    buff += title + "\r\n" + url + "\r\n\r\n";
+                } else if (param == "markdown") {
+                    buff += "[" + title + "](" + url + ")\r\n";
+                } else if (param == "pukiwiki") {
+                    buff += "[[" + title + ":" + url + "]]\r\n";
+                } else if (param == "html") {
+                    buff += "<a href=\"" + url + "\">" + title + "</a>\r\n";
+                }
             }
         }
+
         // console.log(buff);
-        navigator.clipboard.writeText(buff);
+        // navigator.clipboard.writeText(buff);
+
+        let textarea = document.createElement("textarea");
+        textarea.value = buff;
+        document.body.append(textarea);
+        textarea.select();
+        document.execCommand("copy");
+        textarea.remove();
+
         messageBox("copied.");
     }
 
@@ -28,6 +53,8 @@
         }, 1000);
     }
 
-    copy();
+    browser.runtime.onMessage.addListener((message) => {
+        copy(message.command);
+    });
 
 })();
